@@ -124,7 +124,7 @@ const Repos = () => {
                     <option value="TypeScript">Typescript</option>
                     <option value="JavaScript">Javascript</option>
                     <option value="CSS">CSS</option>
-                    <option value="Python">Python</option>
+                    <option value="python">Python</option>
                 </select>
                 <select value={sortParam} onChange={selectSort}>
                     <option value="" disabled>

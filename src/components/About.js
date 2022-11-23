@@ -1,5 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import {
+    FaTwitter,
+    FaEnvelope,
+    FaLink,
+    FaLocationArrow,
+    FaClock,
+    FaBuilding,
+    FaPeopleArrows,
+} from "react-icons/fa";
 
 const About = () => {
     let client_id;
@@ -94,14 +103,18 @@ const About = () => {
             <button className="about_edit" onClick={openEdit}>
                 Edit Profile
             </button>
-            <div>
+            <div className="prop_icon">
+                <FaPeopleArrows className="icon" />
                 {followers} followers. {following} following
             </div>
             {!editMode ? (
-                <p>{company}</p>
+                <p className="prop_icon">
+                    <FaBuilding className="icon" />
+                    {company}
+                </p>
             ) : (
-                <div>
-                    <p>Company</p>
+                <div className="prop_icon">
+                    <FaBuilding className="icon" />
                     <input
                         className="edit_input"
                         type="text"
@@ -112,7 +125,8 @@ const About = () => {
                 </div>
             )}
             {editMode ? (
-                <div>
+                <div className="prop_icon">
+                    <FaLocationArrow className="icon" />
                     <input
                         className="edit_input"
                         type="text"
@@ -122,12 +136,22 @@ const About = () => {
                     />
                 </div>
             ) : (
-                <p>{location}</p>
+                <p className="prop_icon">
+                    <FaLocationArrow className="icon" />
+                    {location}
+                </p>
             )}
-            <p>{`${currDate.toLocaleTimeString()} (GMT+1)`}</p>
-            <p>chibuezenwajiobi@gmail.com</p>
+            <p className="prop_icon">
+                <FaClock className="icon" />
+                {`${currDate.toLocaleTimeString()} (GMT+1)`}
+            </p>
+            <p className="prop_icon">
+                <FaEnvelope className="icon" />
+                chibuezenwajiobi@gmail.com
+            </p>
             {editMode ? (
-                <div>
+                <div className="prop_icon">
+                    <FaLink className="icon" />
                     <input
                         className="edit_input"
                         type="text"
@@ -137,12 +161,14 @@ const About = () => {
                     />
                 </div>
             ) : (
-                <p>
+                <p className="prop_icon">
+                    <FaLink className="icon" />
                     <a href={`https://${blog}`}>{blog}</a>
                 </p>
             )}
             {editMode ? (
-                <div>
+                <div className="prop_icon">
+                    <FaTwitter className="icon" />
                     <input
                         className="edit_input"
                         value={twitter_username}
@@ -151,7 +177,8 @@ const About = () => {
                     />
                 </div>
             ) : (
-                <p>
+                <p className="about_items prop_icon">
+                    <FaTwitter className="icon" />
                     <a href={`https://twitter.com/${twitter_username}`}>
                         @{twitter_username}
                     </a>

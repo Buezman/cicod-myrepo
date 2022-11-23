@@ -51,17 +51,16 @@ a:hover {
   text-decoration: underline;
 }
 .about_edit {
-  width: 95%;
+  width: 100%;
   border-radius: 3px;
   background-color: grey;
   color: white;
   padding: 5px;
-  margin-bottom: 10px;
+  margin: 10px 0;
 }
 .edit_input {
-  width: 90%;
+  width: 97%;
   padding: 5px;
-  margin: 0 20px 10px 0;
   flex-wrap: wrap;
 }
 .edit_buttons {
@@ -83,4 +82,14 @@ a:hover {
   width: 80px;
   border: 1px none;
   padding: 5px;
+}
+.prop_icon {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  align-items: center;
+}
+
+.icon {
+  color: gray;
 }
