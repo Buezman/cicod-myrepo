@@ -1,4 +1,5 @@
 import React from "react";
+import { FaCircle } from "react-icons/fa";
 
 const RepoItem = ({ repo }) => {
     const today = Date.now();
@@ -11,8 +12,18 @@ const RepoItem = ({ repo }) => {
             <h3 className="repo_name">
                 <a href={repo.html_url}>{repo.name}</a>
             </h3>
-            <p className="repo_language">
-                {repo.language} <span>{`Updated ${days} ${val} ago`}</span>
+            <p className="line">
+                {repo.language && (
+                    <span className="repo_language">
+                        <FaCircle
+                            style={{ color: "yellow", margin: "0 10px 0 0" }}
+                        />
+                        {repo.language}
+                    </span>
+                )}
+                <span
+                    className={repo.language ? "repo_update" : ""}
+                >{`Updated ${days} ${val} ago`}</span>
             </p>
         </div>
     );

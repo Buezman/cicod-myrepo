@@ -22,6 +22,17 @@ button {
   justify-content: space-between;
   margin: 10px 0;
 }
+.repo_language {
+  font-weight: 600;
+}
+.line {
+  display: flex;
+  align-items: center;
+}
+.repo_update {
+  margin-left: 40px;
+}
+
 .card {
   border-top: 1px solid rgb(22, 30, 22);
 }
