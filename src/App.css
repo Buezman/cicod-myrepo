@@ -1,0 +1,60 @@
+.home {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  padding: 10px 20% 0 20%;
+}
+button {
+  cursor: pointer;
+}
+/* client_secret: 9ae927dd30358930a699cb7e0cfcb1af054cb91b client_id: c1bba997a00719a0cd65 */
+.repo_container {
+  margin: 0 20px 
+}
+.repo_container_blur {
+  margin: 0 20px;
+  opacity: 0.5;
+  background-image: url('../src/components/spinner.gif');
+  background-repeat: no-repeat;
+}
+.repo_filter {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+.card {
+  border-top: 1px solid rgb(22, 30, 22);
+}
+.user_img {
+  border-radius: 50%;
+  width: 100%;
+}
+.repo_name {
+  color: rgb(0, 102, 255);
+}
+.page_buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.page_buttons > button {
+  padding: 10px;
+  width: 100px;
+  color: rgb(0, 102, 255);
+}
+a {
+  text-decoration: none;
+}
+a:visited {
+  color: rgb(0, 102, 255);
+}
+a:hover {
+  text-decoration: underline;
+}
+.about_edit {
+  width: 100%;
+  border-radius: 3px;
+  background-color: grey;
+  color: white;
+  padding: 5px;
+  margin-bottom: 10px;
+}
