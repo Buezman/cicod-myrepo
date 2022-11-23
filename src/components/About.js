@@ -2,9 +2,16 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 const About = () => {
-    const client_id = process.env.REACT_APP_GITHUB_CLIENT_ID;
-    const client_secret = process.env.REACT_APP_GITHUB_CLIENT_SECRET;
+    let client_id;
+    let client_secret;
 
+    if (process.env.NODE_ENV !== "production") {
+        client_id = process.env.REACT_APP_GITHUB_CLIENT_ID;
+        client_secret = process.env.REACT_APP_GITHUB_CLIENT_SECRET;
+    } else {
+        client_id = process.env.GITHUB_CLIENT_ID;
+        client_secret = process.env.GITHUB_CLIENT_SECRET;
+    }
     const [profile, setProfile] = useState({});
     const getprofile = async () => {
         const result = await axios.get(
