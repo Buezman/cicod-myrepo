@@ -51,10 +51,36 @@ a:hover {
   text-decoration: underline;
 }
 .about_edit {
-  width: 100%;
+  width: 95%;
   border-radius: 3px;
   background-color: grey;
   color: white;
   padding: 5px;
   margin-bottom: 10px;
+}
+.edit_input {
+  width: 90%;
+  padding: 5px;
+  margin: 0 20px 10px 0;
+  flex-wrap: wrap;
+}
+.edit_buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 10px;
+}
+
+.save_button {
+  background-color: rgb(103, 224, 103);
+  color: white;
+}
+.cancel_button {
+  background-color: gainsboro;
+}
+.edit_buttons > button {
+  border-radius: 5px;
+  width: 80px;
+  border: 1px none;
+  padding: 5px;
 }

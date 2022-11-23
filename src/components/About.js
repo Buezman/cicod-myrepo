@@ -66,8 +66,9 @@ const About = () => {
                 <h3>{name}</h3>
             ) : (
                 <div>
-                    <p>Name</p>
+                    <h3>Name</h3>
                     <input
+                        className="edit_input"
                         type="text"
                         value={name}
                         name="name"
@@ -78,8 +79,9 @@ const About = () => {
             <h4>{login}</h4>
             {editMode ? (
                 <div>
-                    <p>Bio</p>
+                    <h3>Bio</h3>
                     <textarea
+                        className="edit_input"
                         type="text"
                         value={bio}
                         name="bio"
@@ -101,6 +103,7 @@ const About = () => {
                 <div>
                     <p>Company</p>
                     <input
+                        className="edit_input"
                         type="text"
                         value={company}
                         name="company"
@@ -111,6 +114,7 @@ const About = () => {
             {editMode ? (
                 <div>
                     <input
+                        className="edit_input"
                         type="text"
                         value={location}
                         name="location"
@@ -123,23 +127,29 @@ const About = () => {
             <p>{`${currDate.toLocaleTimeString()} (GMT+1)`}</p>
             <p>chibuezenwajiobi@gmail.com</p>
             {editMode ? (
-                <input
-                    type="text"
-                    value={blog}
-                    name="blog"
-                    onChange={handleChange}
-                />
+                <div>
+                    <input
+                        className="edit_input"
+                        type="text"
+                        value={blog}
+                        name="blog"
+                        onChange={handleChange}
+                    />
+                </div>
             ) : (
                 <p>
                     <a href={`https://${blog}`}>{blog}</a>
                 </p>
             )}
             {editMode ? (
-                <input
-                    value={twitter_username}
-                    name="twitter_username"
-                    onChange={handleChange}
-                />
+                <div>
+                    <input
+                        className="edit_input"
+                        value={twitter_username}
+                        name="twitter_username"
+                        onChange={handleChange}
+                    />
+                </div>
             ) : (
                 <p>
                     <a href={`https://twitter.com/${twitter_username}`}>
@@ -149,8 +159,12 @@ const About = () => {
             )}
             {editMode && (
                 <div className="edit_buttons">
-                    <button onClick={saveEdit}>Save</button>
-                    <button onClick={cancelEdit}>Cancel</button>
+                    <button className="save_button" onClick={saveEdit}>
+                        Save
+                    </button>
+                    <button className="cancel_button" onClick={cancelEdit}>
+                        Cancel
+                    </button>
                 </div>
             )}
         </div>
