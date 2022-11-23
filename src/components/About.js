@@ -22,12 +22,21 @@ const About = () => {
         client_secret = process.env.GITHUB_CLIENT_SECRET;
     }
     const [profile, setProfile] = useState({});
+    const [iprofile, setIProfile] = useState({});
     const [editMode, setEditMode] = useState(false);
     const getprofile = async () => {
         const result = await axios.get(
             `https://api.github.com/users/buezman?client_id=${client_id}?client_secret=${client_secret}`
         );
         setProfile(result.data);
+        setIProfile({
+            iname: result.data.name,
+            ibio: result.data.bio,
+            iblog: result.data.blog,
+            icompany: result.data.company,
+            ilocation: result.data.location,
+            itwitter_username: result.data.twitter_username,
+        });
     };
     const {
         login,
@@ -42,14 +51,34 @@ const About = () => {
         twitter_username,
     } = profile;
 
+    const { iname, ibio, iblog, icompany, ilocation, itwitter_username } =
+        iprofile;
+
     const openEdit = () => {
         setEditMode(true);
     };
     const cancelEdit = () => {
+        setProfile({
+            ...profile,
+            name: iname,
+            bio: ibio,
+            blog: iblog,
+            company: icompany,
+            location: ilocation,
+            twitter_username: itwitter_username,
+        });
         setEditMode(false);
     };
     const saveEdit = () => {
-        cancelEdit();
+        setIProfile({
+            iname: name,
+            ibio: bio,
+            iblog: blog,
+            icompany: company,
+            ilocation: location,
+            itwitter_username: twitter_username,
+        });
+        setEditMode(false);
     };
 
     const handleChange = (e) => {
