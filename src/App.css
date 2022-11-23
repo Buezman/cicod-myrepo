@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 40% 60%;
   padding: 10px 20% 0 20%;
+  height: 100vh;
 }
 button {
   cursor: pointer;
@@ -35,6 +36,7 @@ button {
   display: flex;
   justify-content: center;
   gap: 20px;
+  margin: 20px 0;
 }
 .page_buttons > button {
   padding: 10px;
@@ -92,4 +94,11 @@ a:hover {
 
 .icon {
   color: gray;
+}
+
+@media screen and (max-width: 775px) {
+  .home {
+    display: flex;
+    flex-direction: column;
+  }
 }

@@ -72,7 +72,7 @@ const About = () => {
                 src={avatar_url}
             />
             {!editMode ? (
-                <h3>{name}</h3>
+                <h2>{name}</h2>
             ) : (
                 <div>
                     <h3>Name</h3>
