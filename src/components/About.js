@@ -129,9 +129,11 @@ const About = () => {
             ) : (
                 <p>{bio}</p>
             )}
-            <button className="about_edit" onClick={openEdit}>
-                Edit Profile
-            </button>
+            {!editMode && (
+                <button className="about_edit" onClick={openEdit}>
+                    Edit Profile
+                </button>
+            )}
             <div className="prop_icon">
                 <FaPeopleArrows className="icon" />
                 {followers} followers. {following} following
