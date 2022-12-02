@@ -192,7 +192,9 @@ const About = () => {
             ) : (
                 <p className="prop_icon">
                     <FaLink className="icon" />
-                    <a href={`https://${blog}`}>{blog}</a>
+                    <a href={`https://${blog}`} target="_blank">
+                        {blog}
+                    </a>
                 </p>
             )}
             {editMode ? (
@@ -208,7 +210,10 @@ const About = () => {
             ) : (
                 <p className="about_items prop_icon">
                     <FaTwitter className="icon" />
-                    <a href={`https://twitter.com/${twitter_username}`}>
+                    <a
+                        href={`https://twitter.com/${twitter_username}`}
+                        target="_blank"
+                    >
                         @{twitter_username}
                     </a>
                 </p>
